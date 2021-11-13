@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28"
+        content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="360 Video — A-Frame">
+
+    <title>AppVideoServer</title>
+
+    <!--   BOOTSTRAP   -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!--   FONT AWESOME   -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <!--   CUSTOMS CSS   -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/client-styles.css">
+
+    <!--   JQUERY   -->
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+
+    <!--    AFRAME  -->
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@7f1d9cd96305e70495308f8f1585835c134c6448/dist/aframe-master.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://aframe.io/aframe/examples/js/hide-on-play.js"></script>
+    <script src="https://aframe.io/aframe/examples/js/play-on-click.js"></script>
+
+</head>
+<body>
+
+    {{>navigation}}
+
+    <main class="container p-5">
+        {{>messages}}
+        {{>errors}}
+        {{{ body }}}
+    </main>
+
+
+    <!-- JQUERY -->
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/jquery.ui.datepicker-es.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <!-- JS FIELD -->
+    <script src="/js/admin-settings.js"></script>
+    <script src="/js/client-settings.js"></script>
+    <script src="/js/info-settings.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

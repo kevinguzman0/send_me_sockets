@@ -1,0 +1,10 @@
+body {
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Concert One', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
+    background: rgb(147,100,254);
+    background: linear-gradient(270deg, rgba(147,100,254,1) 0%, rgba(108,67,255,1) 100%);
+    font-weight: 300;
+    color: #000
+}

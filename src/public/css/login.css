@@ -1,0 +1,67 @@
+#home {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login {
+    background: #fff;
+    width: 300px;
+    align-self: center;
+    padding: 20px 40px 35px 40px;
+    border-radius: 20px;
+}
+.login .title {
+    text-align: center;
+    color: rgb(147,100,254);
+}
+.login .title img {
+    width: 50%;
+}
+.login .title h4 {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+.login .title strong {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.login .form {
+    line-height: 28px;
+    margin-top: 25px;
+    text-align: center;
+}
+.login .form input {
+    outline: none;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    transition: 1s all ease;
+}
+.login .form input::placeholder {
+    color: rgb(0, 0, 0, 0.3);
+}
+.login .form input:hover {
+    border: 1px solid rgb(147,100,254, 0.3);
+}
+.login .form button {
+    background: rgb(147,100,254);
+    background: linear-gradient(270deg, rgba(147,100,254,1) 0%, rgba(108,67,255,1) 100%);
+    border: none;
+    color: #fff;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    text-align: center;
+    transition: 1s all ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 1s all ease;
+}
+.login .form button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

@@ -1,0 +1,42 @@
+<div id="player"></div>
+
+<video id="miVideo" autoplay="" width="320" height="240" style="display: none;"></video>
+
+<button id="Entrar" class="btn btn-primary btn-block mt-5" type="button" name="button">Ver en Pantalla Completa</button>
+
+<a-scene vr-mode-ui="enabled: true" style="display: none;" id="scene">
+    <a-assets>
+
+        <video id="videoFrame" autoplay crossorigin="anonymous" playsinline webkit-playsinline
+            src="">
+        </video>
+    </a-assets>
+    <a-videosphere rotation="0 -90 0" src="#videoFrame">
+    </a-videosphere>
+    <a-camera>
+        <a-entity position="0 0 -1.5">
+        </a-entity>
+    </a-camera>
+
+</a-scene>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<!--    CLAPPR  -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.rawgit.com/thiagopnts/clappr-video360/master/dist/clappr-video360.min.js"></script>
+
+
+<!-- 
+    LLEGA EL VIDEO 360 A CLIENTE
+    SI EL VIDEO ES 360 QUE VAYA A UNA PAGINA EXTERNA DONDE ESTARA
+    EL A-IFRAME, DEBERE PASARLE EL NOMBRE DEL VIDEO
+    Y EL LO ABRIRA
+    
+    <a-entity position="0 0 -1.5" text="align:center;
+            width:6;
+            wrapCount:100;
+            color: white;
+            value: Click or tap to start video" hide-on-play="#videoFrame">
+    </a-entity>
+-->

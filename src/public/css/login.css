@@ -55,13 +55,44 @@
     width: 200px;
     border-radius: 5px;
     margin-top: 15px;
+    margin-bottom: 15px;
     padding: 5px 10px;
     text-align: center;
-    transition: 1s all ease;
     font-size: 1.1rem;
     font-weight: bold;
     transition: 1s all ease;
 }
 .login .form button:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.login .form .btn-register {
+    text-decoration: none;
+    background: none;
+    color: black;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px 50px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 1s all ease;
+    border: 2px solid rgb(147,100,254, 0.8);
+}
+.login .form .btn-register:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.login .save_user {
+    text-align: center;
+    background: rgb(147,100,254, 0.5);
+    border-radius: 5px;
+    padding: 8px 0px 2px 0px;
+    width: 100%;
+}
+.login .save_user h4 {
+    font-size: 1rem;
+    color: white;
+    font-weight: 100;
 }

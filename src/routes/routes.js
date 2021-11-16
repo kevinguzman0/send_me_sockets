@@ -11,33 +11,23 @@ const Video = require('../models/Video');
 
 require('../public/js/passport');
 
-router.get("/", (req, res) => {
-    res.render('index');
-});
-
-router.get("/register", (req, res) => {
-    res.render('register');
-});
-
-router.get("/changePassword", (req, res) => {
-    res.render('changePassword');
-});
-
+router.get('/register', (req, res) => {
+    res.redirect('/')
+})
 router.post('/signup', signUp);
-router.post('/change', changePassword);
-router.post('/signin', passport.authenticate('local', { failureRedirect: '/' }),
-    function (req, res) {
-        if (req.user.name == "admin") {
-            res.redirect('/admin');
-        }
-        else if (req.user.name == 'info') {
-            res.redirect('/info');
-        }
-        else {
-            res.redirect('/client');
-        }
 
+router.post('/signin', function (req, res) {
+    var admin = false
+    if (req.body.name == "admin") {
+        admin = true
+        res.json(admin);
     }
+    else {
+        res.json(admin);
+        // res.redirect('/client');
+    }
+
+}
 );
 router.get('/logout', isAuthenticated, logout);
 

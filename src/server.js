@@ -26,7 +26,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 ////////////ROUTES/////////////////////
-app.use('/sendme', require('./routes/routes'))
+app.use(require('./routes/routes'))
 
 //INICIAR EL SERVIDOR
 const server = app.listen(app.get('port'), () => {

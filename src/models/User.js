@@ -7,10 +7,6 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    tienda:{
-        type: String,
-        required: true
-    },
     password:{
         type: String,
         required: true

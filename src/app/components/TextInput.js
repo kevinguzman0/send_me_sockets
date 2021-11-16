@@ -1,12 +1,12 @@
 import React from 'react';
 import { useField } from "formik"
 
-const TextInput = ({ place, ...props }) => {
+const TextInput = ({ ...props }) => {
     const [field, meta] = useField(props)
 
     return (
         <div>
-            <input {...field} {...props} placeholder={place}/>
+            <input {...field} {...props}/>
             {/* {meta.touched && meta.error ? <div>{meta.error}</div> : null} */}
         </div>
     )

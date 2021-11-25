@@ -1,0 +1,103 @@
+#admin {
+    background: white;
+    width: 70%;
+    min-height: 90vh;
+    margin: 20px;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 20px 15px;
+}
+.content-search {
+    width: 100%;
+    position: relative;
+}
+.content-search input {
+    outline: none;
+    width: 95%;
+    height: 40px;
+    margin: auto;
+    float: left;
+    transition: 0.5s all ease;
+}
+.content-search input:hover {
+    border: 1px solid rgb(147,100,254, 0.3);
+}
+.content-search input:focus {
+    border: none;
+}
+.content-search .btn-search-video {
+    height: 40px;
+    float: right;
+    background: rgb(147,100,254, 0.8);
+    color: white;
+}
+
+.content-render{
+    padding: 20px;
+    margin-top: 50px;
+}
+.item-video {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    word-break: break-word;
+}
+.item-video iframe {
+    width: 350px;
+    height: 200px;
+}
+
+.item-video input[type=radio]{
+	width: 52px;
+	height: 30px;
+	border-radius: 15px;
+}
+.aviso-video{
+    width: 100%;
+    background: rgb(147,100,254, 0.8);
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+}
+.list-clients {
+    width: 100%;
+    background: rgb(147,100,254, 0.2);
+    font-size: 1.3rem;
+    padding: 10px 5px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.list-clients ul {
+    list-style: none;
+}
+
+.list-clients input[type=radio]{
+	width: 35px;
+	height: 20px;
+	border-radius: 10px;
+    margin-right: 5px;
+}
+.content-btn-sendme {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.btn-sendme {
+    background: rgb(147,100,254);
+    background: linear-gradient(270deg, rgba(147,100,254,1) 0%, rgba(108,67,255,1) 100%);
+    border: none;
+    color: #fff;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 1s all ease;
+}
+.btn-sendme:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

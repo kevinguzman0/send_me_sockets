@@ -7,8 +7,6 @@ import IconLogin from '../img/icon_login.png'
 import ButtonLogin from './ButtonLogin'
 import ButtonRedirect from './ButtonRedirect'
 
-
-
 const Login = () => {
     const navigate = useNavigate()
 
@@ -24,9 +22,9 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    navigate('/admin')
+                    navigate('/home-admin')
                 }else{
-                    navigate('/client')
+                    navigate('/home-cliente')
                 }
             })
             .catch(err => console.log(err))

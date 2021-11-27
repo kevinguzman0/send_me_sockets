@@ -8,18 +8,14 @@ const exphbs = require('express-handlebars');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-const fs = require('fs');
-const mqtt = require('mqtt');
-const Dato = require('./models/Dato');
-const Valor = require('./models/Valor');
 
 require('./database');
 require('./public/js/passport');
+const { isAuthenticatedClient } = require('./public/js/auth');
 
 
 /////////////CONFIGURACION PUERTO DEL SERVIDOR////////////
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', '.hbs');
 
 /////////////MIDDLEWARES//////////////////
 app.use(morgan('dev'));
@@ -39,9 +35,10 @@ const io = SocketIO.listen(server);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('public', path.join(__dirname, 'public'));
-app.engine('.hbs', exphbs({
-    defaultLayout: 'index',
-}));
+app.set('views', path.join(__dirname, 'views'));
+app.engine('hbs', require('exphbs'));
+app.set('view engine', '.hbs');
+
 app.use(session({
     secret: 'secret',
     resave: true,
@@ -66,4 +63,50 @@ app.use((req, res, next) => {
 //CONFIGURAR WEBSOCKETS
 io.on('connection', (socket) => {
     console.log("new connection", socket.id);
+});
+
+app.post('/signin', passport.authenticate('local', { failureRedirect: '/' }),
+    function (req, res) {
+        var admin = false
+        if (req.body.name == "admin") {
+            admin = true
+            res.json(admin);
+        }
+        else {
+            res.json(admin);
+        }
+    }
+);
+
+app.get("/client", isAuthenticatedClient, (req, res) => {
+
+    io.engine.generateId = () => {
+
+        var sesionUser = req.session.passport.user;
+
+        return sesionUser;
+    }
+
+    res.render('client');
+
+});
+
+app.post("/enviarvideo", (req, res) => {
+
+    var data = req.body.video;
+    var idClientVideo = req.body.client;
+
+    console.log("Video - " + data);
+    console.log("Cliente - " + idClientVideo);
+    console.log("---------------------------");
+
+    if (idClientVideo == null || data == null) {
+        res.redirect('back');
+    }
+
+    io.sockets.to(`${idClientVideo}`).emit('envio:video', data);
+    console.log("Video al cliente " + idClientVideo + " emitido");
+    console.log("---------------------");
+
+    res.json("Video emitido")
 });

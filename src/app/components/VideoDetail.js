@@ -1,8 +1,12 @@
-import { Form, Formik } from "formik";
-import React from "react";
+import { Field, Form, Formik } from "formik";
+import React, { useState } from "react";
 import VideoItem from './VideoItem'
+import { useAlert } from 'react-alert'
+
 
 const VideoDetail = ({ video, clients }) => {
+    const [mensaje, setMensaje] = useState('')
+    const alert = useAlert()
 
     const renderVideos = video.map((vid) => {
         return (
@@ -13,20 +17,38 @@ const VideoDetail = ({ video, clients }) => {
         return (
             <ul>
                 <li>
-                    <input type="radio" name="client" value={client.id} />
+                    <Field name="client" type="radio" value={client._id}/>
                     {client.name}
                 </li>
             </ul>
         )
     })
+    const activeAlert = () => {
+        if (mensaje) {
+            alert.show('Video emitido!')            
+        }
+    }
     const sendValues = (values) => {
-        console.log(values);
+
+        fetch('/enviarvideo', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setMensaje(data)
+            })
+            .catch(err => console.log(err))
     }
     return (
         <div className="content-render">
             <Formik
                 initialValues={{ video: '', client: '' }}
-                onSubmit={values => console.log(values)}
+                onSubmit={values => sendValues(values)}
             >
                 <Form>
                     <div className="aviso-video">
@@ -37,7 +59,8 @@ const VideoDetail = ({ video, clients }) => {
                         {renderClients}
                     </div>
                     <div className="content-btn-sendme">
-                        <button className="btn-sendme" type="submit">Enviar</button>
+                        <button className="btn-sendme" type="submit" onClick={() => {
+                            activeAlert()}}>Enviar</button>
                     </div>
                 </Form>
             </Formik>

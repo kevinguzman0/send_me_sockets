@@ -1,3 +1,4 @@
+import { Field } from "formik";
 import React from "react";
 
 const VideoItem = ({video}) => {
@@ -5,7 +6,7 @@ const VideoItem = ({video}) => {
     return (
         <div className="item-video row">
             <div className="col-md-6 wow animate__animated animate__slideInLeft animate__fast">
-                <input type="radio" name="video" value={video.id.videoId} />
+                <Field name="video" type="radio" value={video.id.videoId}/>
                 <iframe src={videoSRC} allowFullScreen title="several video" />
             </div>
             <div className="col-md-6 wow animate__animated animate__slideInRight animate__fast">

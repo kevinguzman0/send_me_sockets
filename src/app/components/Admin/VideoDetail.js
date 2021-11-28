@@ -52,7 +52,7 @@ const VideoDetail = ({ video, clients }) => {
             >
                 <Form>
                     <div className="aviso-video">
-                        <h5>Elija el video que desea enviar y a quien</h5>
+                        <h5>Elija el video y el usuario</h5>
                     </div>
                     {renderVideos}
                     <div className="wow animate__animated animate__slideInUp animate__fast list-clients">

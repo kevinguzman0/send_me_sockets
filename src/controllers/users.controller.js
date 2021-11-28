@@ -8,23 +8,21 @@ usersCtrl.signUp = async (req, res) => {
     const {name, password, confirmPassword} = req.body;
 
     if (password != confirmPassword) {
-        errors.push({text: 'Password do not match'});
+        errors.push({text: 'Las contraseñas no coinciden'});
     }
     if (password.length < 4) {
         errors.push({text: 'Password debe ser mayor de 4 caracteres'});
     }
     if (errors.length > 0) {
-        res.render('register', {
+        res.json({
             errors,
-            name,
         });
     } else {
         const nameUser = await User.findOne({name: name});
         if (nameUser) {
             errors.push({text:  'Este nombre de usuario ya esta en uso'});
-            res.render('register', {
+            res.json({
                 errors,
-                name,
             });
         } else{
             const newUser = new User({name, password});

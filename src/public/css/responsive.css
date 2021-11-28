@@ -1,0 +1,30 @@
+@media (max-width: 800px) {
+    #admin {
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .item-video-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .item-video-right {
+        width: 100%;
+    }
+
+    .item-video iframe {
+        height: 220px;
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .item-video iframe {
+        height: 220px;
+        width: 100%;
+    }
+}

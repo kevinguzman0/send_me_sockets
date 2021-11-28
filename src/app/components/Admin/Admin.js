@@ -1,8 +1,9 @@
 import { Form, Formik } from 'formik'
 import React from 'react'
-import TextInput from './TextInput';
+import TextInput from '../TextInput';
 import VideoDetail from './VideoDetail'
-import youtube from '../apis/youtube';
+import youtube from '../../apis/youtube';
+import BoxPrincipal from './BoxPrincipal';
 
 
 class Admin extends React.Component {
@@ -30,7 +31,7 @@ class Admin extends React.Component {
         fetch('/list-clients', {
             method: 'GET',
             headers: {
-                'Accept':  'application/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         })
@@ -45,7 +46,7 @@ class Admin extends React.Component {
 
     render() {
         return (
-            <div id="admin" className="animate__animated animate__fadeIn animate__slow">
+            <BoxPrincipal>
                 <Formik
                     initialValues={{ searching: '' }}
                     onSubmit={values => this.buscarVideo(values)}
@@ -57,15 +58,13 @@ class Admin extends React.Component {
                         </div>
                     </Form>
                 </Formik>
-
                 <div className="videos-details">
                     {this.state.videos.length != 0 ?
                         <VideoDetail video={this.state.videos} clients={this.state.clients} /> :
                         null
                     }
                 </div>
-
-            </div>
+            </BoxPrincipal>
         )
     }
 }

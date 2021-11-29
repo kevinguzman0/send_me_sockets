@@ -5,6 +5,7 @@ import ButtonLogin from './ButtonLogin'
 import TextInput from '../TextInput'
 
 import { useNavigate } from 'react-router-dom'
+import Home from './Home';
 
 
 const Register = () => {

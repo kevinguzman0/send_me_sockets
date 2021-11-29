@@ -5,8 +5,7 @@ class Client extends React.Component {
     render() {
         return (
             <BoxPrincipal>
-                <h1>Pruebaaa socioio</h1>
-                <iframe src="https://sendmeproject.herokuapp.com/client" />
+                <iframe style={{ width: '100%', height: '100vh' }} src="https://sendmeproject.herokuapp.com/client" />
             </BoxPrincipal>
         )
     }

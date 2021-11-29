@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-//"mongodb+srv://admin:admin@videoserver.0hhgh.mongodb.net/videoServer?retryWrites=true&w=majority"
-mongoose.connect('mongodb://localhost/sendme', {
+mongoose.connect('mongodb+srv://kevin:12345@sendme.0hhgh.mongodb.net/sendme?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
